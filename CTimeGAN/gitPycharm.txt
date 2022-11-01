@@ -1,0 +1,8 @@
+In terminal: git branch -m <old_name> <new_name>
+             git branch -m master main
+
+Link to github by:
+From the main menu, choose Git | GitHub | Share Project on GitHub.
+
+Prevent auto adding of files to git
+Settings > Version Control > Confirmation > When files are created > Do not add
