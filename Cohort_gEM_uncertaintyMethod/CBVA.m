@@ -25,7 +25,7 @@ ccva=zeros(size(t));
 for wi=1:1:size(V,2)
 tiI=find(RI(:,wi)==K,1,'first');
 tiC=find(RC(:,wi)==K,1,'first');
-    if ~isempty(tiC)
+    if ~isempty(tiC) && (isempty(tiI) || tiC>=tiI) 
         tIndColl=find(t(ti)<=t(tiC),1,'last');
         if isempty(tIndColl)
             tIndColl=0;
@@ -35,7 +35,7 @@ tiC=find(RC(:,wi)==K,1,'first');
         cbva(tiC)=cbva(tiC)-...
                     dFactor(tiC).*LGDC.*max(max(V(tiC,wi),0)-max(C(1+tIndColl,wi),0),0);
     end
-    if ~isempty(tiI)
+    if ~isempty(tiI) && (isempty(tiC) || tiI>=tiC) 
         tIndColl=find(t(ti)<=t(tiI),1,'last');
         if isempty(tIndColl)
             tIndColl=0;
